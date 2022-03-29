@@ -1,0 +1,30 @@
+.row {
+    margin-top: 15px;
+}
+.no-margin {
+    margin-top: 0;
+}
+
+fieldset {
+    padding: .35em .625em .75em;
+    margin: 0 2px;
+    border: 1px solid silver;
+}
+
+legend {
+    padding: .5em;
+    border: 0;
+    width: auto;
+    margin-bottom: 0px;
+}
+
+textarea{
+    width: 100%;
+    max-width: 100%;
+    border: 1px solid #c7c1c1;
+    border-radius: 6px;
+}
+
+.center{
+    text-align: center;
+}

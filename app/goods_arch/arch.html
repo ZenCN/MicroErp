@@ -1,0 +1,161 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">基本信息</h6>
+            </div>
+            <div class="card-body text-center">
+                <div class="row no-margin">
+                    <div class="col-lg-3">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">名称</span>
+                            </div>
+                            <input type="text" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">分类</span>
+                            </div>
+                            <select class="form-control">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">重量</span>
+                            </div>
+                            <input type="text" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="input-group">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">分类</span>
+                                </div>
+                                <select class="form-control">
+                                    <option>Kg</option>
+                                    <option>Pcs</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-5">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">编号</span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="扫描或输入条形码">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-primary glyphicon glyphicon-camera">扫码</button>
+                                <button type="button" class="btn btn-primary glyphicon glyphicon-barcode" ng-click="gen_barcode">生成</button>
+                                <button type="button" class="btn btn-primary glyphicon glyphicon glyphicon-print">打印</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <canvas calss="bar-code"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<div class="col-lg-12">
+        <div class="card">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">XXXX</h6>
+            </div>
+            <div class="card-body text-center">
+                <div class="bg-primary text-white p-3 rotate-15 d-inline-block my-4">.rotate-15
+                </div>
+                <hr>
+                <div class="bg-primary text-white p-3 rotate-n-15 d-inline-block my-4">.rotate-n-15
+                </div>
+            </div>
+        </div>
+    </div>-->
+</div>
+
+<!--
+<fieldset>
+    <legend></legend>
+
+</fieldset>
+<fieldset style="margin-top: 15px;">
+    <legend>价格管理</legend>
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">进货价</span>
+                <input type="number" class="form-control" placeholder="请输入">
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">批发价</span>
+                <input type="number" class="form-control" placeholder="请输入">
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">样品价</span>
+                <input type="number" class="form-control" placeholder="请输入">
+            </div>
+        </div>
+    </div>
+</fieldset>
+<fieldset style="margin-top: 15px;">
+    <legend>商品图文</legend>
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">进货价</span>
+                <input type="number" class="form-control" placeholder="请输入">
+            </div>
+        </div>
+    </div>
+</fieldset>
+<fieldset style="margin-top: 15px;">
+    <legend>库存设置</legend>
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">期初库存</span>
+                <input type="number" class="form-control" placeholder="录入前已有库存">
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">最低库存</span>
+                <input type="number" class="form-control" placeholder="低于此库存量，预警">
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">最高库存</span>
+                <input type="number" class="form-control" placeholder="高于此库存量，预警">
+            </div>
+        </div>
+    </div>
+</fieldset>
+<fieldset style="margin-top: 15px;">
+    <legend>备注</legend>
+    <textarea></textarea>
+</fieldset>
+<div class="row center">
+    <button type="button" class="btn btn-primary btn-sm">
+        <span class="glyphicon glyphicon-floppy-save"></span>
+        <span>保存</span>
+    </button>
+</div>-->
