@@ -67,14 +67,27 @@
                     'app/goods_arch/arch.css'
                 ])
             })
+            .state('menu.goods_',{
+                url: '/goods_arch',
+                controller: 'arch_ctrl',
+                templateUrl: 'app/goods_arch/arch.html',
+                resolve: resolve_dep([
+                    'app/goods_arch/arch_ctrl.js',
+                    'libs/js-barcode/JsBarcode.all.min.js',
+                    'app/goods_arch/arch.css'
+                ])
+            })
             .state('menu.goods_stock',{
                     url: '/goods_stock',
                     controller: 'stock_ctrl',
                     templateUrl: 'app/goods_stock/stock.html',
                     resolve: resolve_dep([
                         'app/goods_stock/stock_ctrl.js',
-                        'libs/js-barcode/JsBarcode.all.min.js',
-                        'app/goods_stock/stock.css'
+                        'libs/datatables/jquery.dataTables.min.js',
+                        'libs/datatables/dataTables.bootstrap4.min.js',
+                        'app/directive/grid-table.js',
+                        'app/goods_stock/stock.css',
+                        'libs/datatables/dataTables.bootstrap4.css'
                     ])
         });
     }

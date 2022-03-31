@@ -7,7 +7,7 @@
             <div class="card-body text-center">
                 <div class="row no-margin">
                     <div class="col-lg-3">
-                        <div class="input-group mb-3">
+                        <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">名称</span>
                             </div>
@@ -15,7 +15,7 @@
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="input-group mb-3">
+                        <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">分类</span>
                             </div>
@@ -29,7 +29,7 @@
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="input-group mb-3">
+                        <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">重量</span>
                             </div>
@@ -38,9 +38,9 @@
                     </div>
                     <div class="col-lg-3">
                         <div class="input-group">
-                            <div class="input-group mb-3">
+                            <div class="input-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text">分类</span>
+                                    <span class="input-group-text">单位</span>
                                 </div>
                                 <select class="form-control">
                                     <option>Kg</option>
@@ -51,8 +51,8 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-5">
-                        <div class="input-group mb-3">
+                    <div class="col-lg-6">
+                        <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">编号</span>
                             </div>
@@ -64,98 +64,102 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-7">
-                        <canvas calss="bar-code"></canvas>
+                    <div class="col-lg-6">
+                        <canvas calss="bar-code" style="height: 40px;"></canvas>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!--<div class="col-lg-12">
-        <div class="card">
+        <div class="card" style="margin-top: 20px;">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">XXXX</h6>
+                <h6 class="m-0 font-weight-bold text-primary">价格管理</h6>
             </div>
             <div class="card-body text-center">
-                <div class="bg-primary text-white p-3 rotate-15 d-inline-block my-4">.rotate-15
-                </div>
-                <hr>
-                <div class="bg-primary text-white p-3 rotate-n-15 d-inline-block my-4">.rotate-n-15
+                <div class="row no-margin">
+                    <div class="col-lg-3">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">进货价</span>
+                            </div>
+                            <input type="number" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">批发价</span>
+                            </div>
+                            <input type="number" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">样品价</span>
+                            </div>
+                            <input type="number" class="form-control" />
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>-->
+        <div class="card" style="margin-top: 20px;">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">商品图文</h6>
+            </div>
+            <div class="card-body text-center">
+                <div class="bg-primary text-white p-3 rotate-15 d-inline-block my-4">图片
+                </div>
+            </div>
+        </div>
+        <div class="card" style="margin-top: 20px;">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">库存设置</h6>
+            </div>
+            <div class="card-body text-center">
+                <div class="row no-margin">
+                    <div class="col-lg-3">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">期初库存</span>
+                            </div>
+                            <input type="number" class="form-control" placeholder="录入目前已有库存"/>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">最低库存</span>
+                            </div>
+                            <input type="number" class="form-control" placeholder="低于此库存量，预警"/>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">最高库存</span>
+                            </div>
+                            <input type="number" class="form-control" placeholder="高于此库存量，预警"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" style="margin-top: 20px;">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">备注</h6>
+            </div>
+            <div class="card-body text-center">
+                <textarea></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12" style="text-align: center;margin: 15px 0;">
+        <a href="#" class="btn btn-primary btn-icon-split">
+            <span class="icon text-white-50">
+                <i class="fas fa-flag"></i>
+            </span>
+            <span class="text">保存</span>
+        </a>
+    </div>
 </div>
-
-<!--
-<fieldset>
-    <legend></legend>
-
-</fieldset>
-<fieldset style="margin-top: 15px;">
-    <legend>价格管理</legend>
-    <div class="row">
-        <div class="col-lg-3">
-            <div class="input-group">
-                <span class="input-group-addon">进货价</span>
-                <input type="number" class="form-control" placeholder="请输入">
-            </div>
-        </div>
-        <div class="col-lg-3">
-            <div class="input-group">
-                <span class="input-group-addon">批发价</span>
-                <input type="number" class="form-control" placeholder="请输入">
-            </div>
-        </div>
-        <div class="col-lg-3">
-            <div class="input-group">
-                <span class="input-group-addon">样品价</span>
-                <input type="number" class="form-control" placeholder="请输入">
-            </div>
-        </div>
-    </div>
-</fieldset>
-<fieldset style="margin-top: 15px;">
-    <legend>商品图文</legend>
-    <div class="row">
-        <div class="col-lg-3">
-            <div class="input-group">
-                <span class="input-group-addon">进货价</span>
-                <input type="number" class="form-control" placeholder="请输入">
-            </div>
-        </div>
-    </div>
-</fieldset>
-<fieldset style="margin-top: 15px;">
-    <legend>库存设置</legend>
-    <div class="row">
-        <div class="col-lg-3">
-            <div class="input-group">
-                <span class="input-group-addon">期初库存</span>
-                <input type="number" class="form-control" placeholder="录入前已有库存">
-            </div>
-        </div>
-        <div class="col-lg-3">
-            <div class="input-group">
-                <span class="input-group-addon">最低库存</span>
-                <input type="number" class="form-control" placeholder="低于此库存量，预警">
-            </div>
-        </div>
-        <div class="col-lg-3">
-            <div class="input-group">
-                <span class="input-group-addon">最高库存</span>
-                <input type="number" class="form-control" placeholder="高于此库存量，预警">
-            </div>
-        </div>
-    </div>
-</fieldset>
-<fieldset style="margin-top: 15px;">
-    <legend>备注</legend>
-    <textarea></textarea>
-</fieldset>
-<div class="row center">
-    <button type="button" class="btn btn-primary btn-sm">
-        <span class="glyphicon glyphicon-floppy-save"></span>
-        <span>保存</span>
-    </button>
-</div>-->
