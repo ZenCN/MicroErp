@@ -1,35 +1,32 @@
 <div class="row">
     <div class="col-lg-12">
         <div class="card" style="margin-top: 20px;">
-            <div class="card-header py-3" style="padding-top: 7px !important;">
-                <div class="m-0 font-weight-bold text-primary" style="width: 112px;display: inline-block;height: 29px;line-height: 29px;">商品进货-编辑</div>
-                <a type="button" class="btn btn-primary btn-sm" style="float: right;" ng-href="#!/goods_stock">返回</a>
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">商品出货</h6>
             </div>
             <div class="card-body text-center">
                 <div class="row no-margin">
                     <div class="col-lg-3">
                         <div class="input-group">
                             <div class="input-group-prepend">
-                                <span class="input-group-text">供应商</span>
+                                <span class="input-group-text">是否定制</span>
                             </div>
-                            <select class="form-control">
-                                <option>1234 **执**</option>
-                                <option>1235 **的**</option>
-                            </select>
+                            <label class="form-control"><input type="radio" name="sfdz" value="1" style="margin-right: 10px;">是</label>
+                            <label class="form-control"><input type="radio" name="sfdz" value="0" style="margin-right: 10px;">否</label>
                         </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="input-group">
                             <div class="input-group-prepend">
-                                <span class="input-group-text">进货单号</span>
+                                <span class="input-group-text">销售单号</span>
                             </div>
-                            <input type="text" class="form-control" />
+                            <input type="text" class="form-control" disabled />
                         </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="input-group">
                             <div class="input-group-prepend">
-                                <span class="input-group-text">进货日期</span>
+                                <span class="input-group-text">出货日期</span>
                             </div>
                             <input type="text" class="form-control" />
                         </div>
@@ -47,12 +44,31 @@
                     <div class="col-lg-3">
                         <div class="input-group">
                             <div class="input-group-prepend">
-                                <span class="input-group-text">入货仓库</span>
+                                <span class="input-group-text">出货仓库</span>
                             </div>
                             <select class="form-control">
                                 <option>XX仓库1</option>
                                 <option>XX仓库2</option>
                             </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">客户</span>
+                            </div>
+                            <select class="form-control">
+                                <option>1234 **执**</option>
+                                <option>1235 **的**</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">销售日期</span>
+                            </div>
+                            <input type="text" disabled class="form-control" />
                         </div>
                     </div>
                     <div class="col-lg-3">
@@ -62,6 +78,30 @@
                             </span>
                             <span class="text">选择商品</span>
                         </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">付款方式</span>
+                            </div>
+                            <select class="form-control">
+                                <option>支付宝</option>
+                                <option>银行转账</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">销售类型</span>
+                            </div>
+                            <select class="form-control">
+                                <option>批发</option>
+                                <option>零售</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -74,24 +114,52 @@
                 <div class="table-responsive">
                     <table grid-table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
-                        </tr>
+                            <tr>
+                                <th>商品名称</th>
+                                <th>商品编码</th>
+                                <th>销售数量</th>
+                                <th>单价</th>
+                                <th>Start date</th>
+                                <th>Salary</th>
+                            </tr>
                         </thead>
                         <tfoot>
-                        <tr>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
-                        </tr>
+                            <tr>
+                                <th>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">总价</span>
+                                        </div>
+                                        <input type="number" class="form-control" />
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">总量</span>
+                                        </div>
+                                        <input type="number" class="form-control" />
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">优惠金额</span>
+                                        </div>
+                                        <input type="number" class="form-control" />
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">订单金额</span>
+                                        </div>
+                                        <input type="number" class="form-control" />
+                                    </div>
+                                </th>
+                                <th>Start date</th>
+                                <th>Salary</th>
+                            </tr>
                         </tfoot>
                         <tbody>
                         <tr>

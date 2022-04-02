@@ -1,9 +1,9 @@
 <div class="row">
     <div class="col-lg-12">
-        <div class="card" style="margin-top: 20px;">
+        <div class="card">
             <div class="card-header py-3" style="padding-top: 7px !important;">
-                <div class="m-0 font-weight-bold text-primary" style="width: 112px;display: inline-block;height: 29px;line-height: 29px;">商品进货-编辑</div>
-                <a type="button" class="btn btn-primary btn-sm" style="float: right;" ng-href="#!/goods_stock">返回</a>
+                <div class="m-0 font-weight-bold text-primary" style="width: 80px;display: inline-block;height: 31px;line-height: 31px;">商品进货</div>
+                <a type="button" class="btn btn-primary btn-sm" ng-href="#!/goods_stock">新增</a>
             </div>
             <div class="card-body text-center">
                 <div class="row no-margin">
@@ -32,6 +32,8 @@
                                 <span class="input-group-text">进货日期</span>
                             </div>
                             <input type="text" class="form-control" />
+                            <span class="input-group-text">至</span>
+                            <input type="text" class="form-control" />
                         </div>
                     </div>
                     <div class="col-lg-3">
@@ -39,7 +41,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">经手人</span>
                             </div>
-                            <input type="text" disabled class="form-control" value="当前用户" />
+                            <input type="text" class="form-control" />
                         </div>
                     </div>
                 </div>
@@ -60,27 +62,26 @@
                             <span class="icon text-white-50">
                                 <i class="fas fa-flag"></i>
                             </span>
-                            <span class="text">选择商品</span>
+                            <span class="text">查询</span>
+                        </a>
+                        <a href="#" class="btn btn-primary btn-icon-split">
+                            <span class="icon text-white-50">
+                                <i class="fas fa-flag"></i>
+                            </span>
+                            <span class="text">重置</span>
                         </a>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="card" style="margin-top: 20px;">
-            <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">商品明细</h6>
-            </div>
-            <div class="card-body text-center">
-                <div class="table-responsive">
+                <div class="table-responsive" style="margin-top: 20px;">
                     <table grid-table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
+                            <th>进货单号</th>
+                            <th>进货日期</th>
+                            <th>经手人</th>
+                            <th>供应商</th>
+                            <th>状态</th>
+                            <th>操作</th>
                         </tr>
                         </thead>
                         <tfoot>
@@ -555,13 +556,5 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="col-lg-12" style="text-align: center;margin: 15px 0;">
-        <a href="#" class="btn btn-primary btn-icon-split">
-            <span class="icon text-white-50">
-                <i class="fas fa-flag"></i>
-            </span>
-            <span class="text">保存</span>
-        </a>
     </div>
 </div>

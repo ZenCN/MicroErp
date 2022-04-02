@@ -18,86 +18,47 @@
     </li>
     <!-- Divider -->
     <hr class="sidebar-divider">
-    <!-- Heading -->
-    <div class="sidebar-heading">
-        货物
-    </div>
+    <div class="sidebar-heading">货物出入</div>
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#goodsManager"
-           aria-expanded="true" aria-controls="collapseTwo">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>货物管理</span>
-        </a>
-        <div id="goodsManager" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <!--<h6 class="collapse-header">Custom Components:</h6>-->
-                <a class="collapse-item" href="javascript:void(0)">货物查询</a>
-                <a class="collapse-item" ng-href="#!/goods_arch">货物建档</a>
-            </div>
-        </div>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#warehouseManager"
-           aria-expanded="true" aria-controls="collapseTwo">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>仓库管理</span>
-        </a>
-        <div id="warehouseManager" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="javascript:void(0)">库存查询</a>
-                <a class="collapse-item" ng-href="#!/goods_stock">商品进货</a>
-                <a class="collapse-item" href="javascript:void(0)">进货单查询</a>
-                <a class="collapse-item" href="javascript:void(0)">商品出货</a>
-                <a class="collapse-item" href="javascript:void(0)">出货单查询</a>
-            </div>
-        </div>
-    </li>
-    <div class="sidebar-heading">
-        销售
-    </div>
-    <!-- Divider -->
-    <hr class="sidebar-divider">
-    <!-- Heading -->
-    <div class="sidebar-heading">
-        Addons
-    </div>
-    <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item active">
-        <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
-           aria-controls="collapsePages">
-            <i class="fas fa-fw fa-folder"></i>
-            <span>Pages</span>
-        </a>
-        <div id="collapsePages" class="collapse show" aria-labelledby="headingPages"
-             data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Login Screens:</h6>
-                <a class="collapse-item" href="login.html">Login</a>
-                <a class="collapse-item" href="register.html">Register</a>
-                <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                <div class="collapse-divider"></div>
-                <h6 class="collapse-header">Other Pages:</h6>
-                <a class="collapse-item" href="404.html">404 Page</a>
-                <a class="collapse-item active" href="blank.html">Blank Page</a>
-            </div>
-        </div>
-    </li>
-    <!-- Nav Item - Charts -->
-    <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" ng-href="#!/goods_arch">
             <i class="fas fa-fw fa-chart-area"></i>
-            <span>Charts</span></a>
-    </li>
-    <!-- Nav Item - Tables -->
-    <li class="nav-item">
-        <a class="nav-link" href="tables.html">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Tables</span>
+            <span>货物建档</span>
         </a>
     </li>
-    <!-- Divider -->
+    <li class="nav-item">
+        <a class="nav-link" href="#">
+            <i class="fas fa-fw fa-table"></i>
+            <span>库存查询</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" ng-href="#!/goods_stock_lst">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>商品进货</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" ng-href="#!/goods_checkout_lst">
+            <i class="fas fa-fw fa-table"></i>
+            <span>商品出货</span>
+        </a>
+    </li>
+    <div class="sidebar-heading">基础数据</div>
+    <li class="nav-item">
+        <a class="nav-link" ng-href="#!/dictionary">
+            <i class="fas fa-fw fa-table"></i>
+            <span>数据字典</span>
+        </a>
+        <a class="nav-link" ng-href="#!/dictionary">
+            <i class="fas fa-fw fa-table"></i>
+            <span>用户管理</span>
+        </a>
+        <a class="nav-link" ng-href="#!/dictionary">
+            <i class="fas fa-fw fa-table"></i>
+            <span>角色管理</span>
+        </a>
+    </li>
     <hr class="sidebar-divider d-none d-md-block">
-    <!-- Sidebar Toggler (Sidebar) -->
     <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
     </div>
@@ -304,16 +265,13 @@
         <div class="container-fluid" ui-view>
             <!-- Page Heading -->
         </div>
-        <!-- /.container-fluid -->
-    </div>
-    <!-- End of Main Content -->
-    <!-- Footer -->
-    <footer class="sticky-footer bg-white">
+
+    </div>       <!-- /.container-fluid -->
+    <!--<footer class="sticky-footer bg-white">
         <div class="container my-auto">
             <div class="copyright text-center my-auto">
                 <span>Copyright &copy; Your Website 2020</span>
             </div>
         </div>
-    </footer>
-    <!-- End of Footer -->
+    </footer>-->
 </div>

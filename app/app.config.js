@@ -20,7 +20,7 @@
 
         var resolve_dep = function (config) {
             if (window.app_path) {
-                $.each(config, function(i) {
+                $.each(config, function (i) {
                     config[i] = window.app_path + config[i];
                 });
             }
@@ -43,10 +43,13 @@
                     'app/menu/menu_ctrl.js',
                     'app/menu/menu.css',
                     'libs/plugin.slideout/slideout.min.js',
-                    'app/directive/slide-menu.js'
+                    'app/directive/slide-menu.js',
+                    'libs/datatables/jquery.dataTables.min.js',
+                    'libs/datatables/dataTables.bootstrap4.min.js',
+                    'libs/datatables/dataTables.bootstrap4.css'
                 ])
             })
-            .state('menu.dashboard',{
+            .state('menu.dashboard', {
                 url: '/dashboard',
                 controller: 'dashboard_ctrl',
                 templateUrl: 'app/dashboard/dashboard.html',
@@ -58,7 +61,7 @@
                     'app/dashboard/dashboard.css'
                 ])
             })
-            .state('menu.goods_arch',{
+            .state('menu.goods_arch', {
                 url: '/goods_arch',
                 controller: 'arch_ctrl',
                 templateUrl: 'app/goods_arch/arch.html',
@@ -67,28 +70,54 @@
                     'app/goods_arch/arch.css'
                 ])
             })
-            .state('menu.goods_',{
-                url: '/goods_arch',
-                controller: 'arch_ctrl',
-                templateUrl: 'app/goods_arch/arch.html',
+            .state('menu.goods_stock_lst', {
+                url: '/goods_stock_lst',
+                controller: 'stock_lst_ctrl',
+                templateUrl: 'app/goods_stock/stock_lst.html',
                 resolve: resolve_dep([
-                    'app/goods_arch/arch_ctrl.js',
-                    'libs/js-barcode/JsBarcode.all.min.js',
-                    'app/goods_arch/arch.css'
+                    'app/goods_stock/stock_lst_ctrl.js',
+                    'app/directive/grid-table.js',
+                    'app/goods_stock/stock_lst.css'
                 ])
             })
-            .state('menu.goods_stock',{
-                    url: '/goods_stock',
-                    controller: 'stock_ctrl',
-                    templateUrl: 'app/goods_stock/stock.html',
-                    resolve: resolve_dep([
-                        'app/goods_stock/stock_ctrl.js',
-                        'libs/datatables/jquery.dataTables.min.js',
-                        'libs/datatables/dataTables.bootstrap4.min.js',
-                        'app/directive/grid-table.js',
-                        'app/goods_stock/stock.css',
-                        'libs/datatables/dataTables.bootstrap4.css'
-                    ])
-        });
+            .state('menu.goods_stock', {
+                url: '/goods_stock',
+                controller: 'stock_ctrl',
+                templateUrl: 'app/goods_stock/stock.html',
+                resolve: resolve_dep([
+                    'app/goods_stock/stock_ctrl.js',
+                    'app/directive/grid-table.js',
+                    'app/goods_stock/stock.css'
+                ])
+            })
+            .state('menu.goods_checkout_lst', {
+                url: '/goods_checkout_lst',
+                controller: 'checkout_lst_ctrl',
+                templateUrl: 'app/goods_checkout/checkout_lst.html',
+                resolve: resolve_dep([
+                    'app/goods_checkout/checkout_lst_ctrl.js',
+                    'app/directive/grid-table.js',
+                    'app/goods_checkout/checkout_lst.css'
+                ])
+            })
+            .state('menu.goods_checkout', {
+                url: '/goods_checkout',
+                controller: 'checkout_ctrl',
+                templateUrl: 'app/goods_checkout/checkout.html',
+                resolve: resolve_dep([
+                    'app/goods_checkout/checkout_ctrl.js',
+                    'app/directive/grid-table.js',
+                    'app/goods_checkout/checkout.css'
+                ])
+            })
+            .state('menu.dictionary', {
+                url: '/dictionary',
+                controller: 'dictionary_ctrl',
+                templateUrl: 'app/dictionary/dictionary.html',
+                resolve: resolve_dep([
+                    'app/dictionary/dictionary_ctrl.js',
+                    'app/directive/grid-table.js'
+                ])
+            });
     }
 })();
