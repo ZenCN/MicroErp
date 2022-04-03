@@ -1,13 +1,19 @@
 <div class="row">
     <div class="col-lg-12">
         <div class="card">
-            <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">基本信息</h6>
+            <div class="card-header py-3" style="padding-top: 7px !important;">
+                <h6 class="m-0 font-weight-bold text-primary" style="display: inline-block;height: 29px;line-height: 29px;">商品档案-基本信息</h6>
+                <button class="btn btn-light btn-sm btn-icon-split" style="float: right" ui-sref="menu.goods_arch_lst">
+                    <span class="icon text-gray-600">
+                        <i class="fas fas fa-arrow-left"></i>
+                    </span>
+                    <span class="text">返回</span>
+                </button>
             </div>
             <div class="card-body text-center">
                 <div class="row no-margin">
                     <div class="col-lg-3">
-                        <div class="input-group">
+                        <div class="input-group input-group-sm">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">名称</span>
                             </div>
@@ -15,7 +21,7 @@
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="input-group">
+                        <div class="input-group input-group-sm">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">分类</span>
                             </div>
@@ -29,7 +35,7 @@
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="input-group">
+                        <div class="input-group input-group-sm">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">重量</span>
                             </div>
@@ -37,8 +43,8 @@
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="input-group">
-                            <div class="input-group">
+                        <div class="input-group input-group-sm">
+                            <div class="input-group input-group-sm">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">单位</span>
                                 </div>
@@ -52,15 +58,15 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-6">
-                        <div class="input-group">
+                        <div class="input-group input-group-sm">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">编号</span>
                             </div>
                             <input type="text" class="form-control" placeholder="扫描或输入条形码">
                             <div class="btn-group">
-                                <button type="button" class="btn btn-primary glyphicon glyphicon-camera">扫码</button>
-                                <button type="button" class="btn btn-primary glyphicon glyphicon-barcode" ng-click="gen_barcode">生成</button>
-                                <button type="button" class="btn btn-primary glyphicon glyphicon glyphicon-print">打印</button>
+                                <button type="button" class="btn btn-primary btn-sm">扫码</button>
+                                <button type="button" class="btn btn-primary btn-sm" ng-click="gen_barcode">生成</button>
+                                <button type="button" class="btn btn-primary btn-sm">打印</button>
                             </div>
                         </div>
                     </div>
@@ -77,7 +83,7 @@
             <div class="card-body text-center">
                 <div class="row no-margin">
                     <div class="col-lg-3">
-                        <div class="input-group">
+                        <div class="input-group input-group-sm">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">进货价</span>
                             </div>
@@ -85,7 +91,7 @@
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="input-group">
+                        <div class="input-group input-group-sm">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">批发价</span>
                             </div>
@@ -93,7 +99,7 @@
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="input-group">
+                        <div class="input-group input-group-sm">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">样品价</span>
                             </div>
@@ -114,12 +120,20 @@
         </div>
         <div class="card" style="margin-top: 20px;">
             <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">商品描述</h6>
+            </div>
+            <div class="card-body text-center">
+                <textarea></textarea>
+            </div>
+        </div>
+        <div class="card" style="margin-top: 20px;">
+            <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">库存设置</h6>
             </div>
             <div class="card-body text-center">
                 <div class="row no-margin">
                     <div class="col-lg-3">
-                        <div class="input-group">
+                        <div class="input-group input-group-sm">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">期初库存</span>
                             </div>
@@ -127,7 +141,7 @@
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="input-group">
+                        <div class="input-group input-group-sm">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">最低库存</span>
                             </div>
@@ -135,7 +149,7 @@
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="input-group">
+                        <div class="input-group input-group-sm">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">最高库存</span>
                             </div>
@@ -145,17 +159,9 @@
                 </div>
             </div>
         </div>
-        <div class="card" style="margin-top: 20px;">
-            <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">备注</h6>
-            </div>
-            <div class="card-body text-center">
-                <textarea></textarea>
-            </div>
-        </div>
     </div>
     <div class="col-lg-12" style="text-align: center;margin: 15px 0;">
-        <a href="#" class="btn btn-primary btn-icon-split">
+        <a href="#" class="btn btn-primary btn-sm btn-icon-split">
             <span class="icon text-white-50">
                 <i class="fas fa-flag"></i>
             </span>

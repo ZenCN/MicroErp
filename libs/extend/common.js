@@ -100,84 +100,24 @@ String.prototype.contains = function(str) {
 };
 
 //---------------------array----------------------
-Array.prototype.extract = function(keys) {
-    var arr = [];
-    if (keys.length) {
-        var obj;
-        for (var i = 0; i < this.length; i++) {
-            obj = {};
-            for (var j = 0; j < keys.length; j++) {
-                if (this[i][keys[j]] == null || this[i][keys[j]] == 0 ||
-                    typeof this[i][keys[j]] == "string" && this[i][keys[j]].trim().length == 0 ||
-                    typeof this[i][keys[j]] == "number" && this[i][keys[j]] == 0) {
-                    continue;
+Array.prototype.get = function(key, match_val, option) {
+    for (var i = 0; i < this.length; i++) {
+        obj = this[i];
+        if (obj[key] == match_val) {
+            if(option) { //option存在
+                if(obj == 'del') { //del 表示删除
+                    this.splice(i, 1);
+                    return true;
+                } else { //否则返回对象指定的option的值
+                    return obj[option]; //找到后默认返回obj
                 }
-                obj[keys[j]] = this[i][keys[j]];
-            }
-
-            if (!$.isEmptyObject(obj)) {
-                arr.push(obj);
+            } else { //未指定option，则返回value对象
+                return obj;
             }
         }
     }
 
-    return arr;
-};
-
-Array.prototype.the_first = function() { //注意：不要跟jquery的first方法冲突
-    if (this.length) {
-        return this[0];
-    } else {
-        return undefined;
-    }
-};
-
-Array.prototype.the_last = function() {
-    if (this.length) {
-        return this[this.length - 1];
-    } else {
-        return undefined;
-    }
-};
-
-Array.prototype.seek = function(predicate, match_val, option) {
-    if (this == null) {
-        throw new TypeError('Array.prototype.find called on null or undefined');
-    }
-
-    var list = Object(this);
-    var length = list.length >>> 0;
-    var value;
-
-    if (typeof predicate == 'function') {
-        var thisArg = arguments[1];
-        for (var i = 0; i < length; i++) {
-            value = list[i];
-            //while thisArg is function 'return false' in func inner will break the func
-            if (predicate.call(thisArg, value, i, list)) {
-                return value;
-            }
-        }
-    } else if (typeof predicate == "string") {
-        for (var i = 0; i < length; i++) {
-            value = list[i];
-            if (value[predicate] == match_val) {
-                switch (typeof option) {
-                case 'string':
-                    if (option == 'del') {
-                        list.splice(i, 1);
-                        return true;
-                    } else {
-                        return value[option || predicate]; //return the appointed key
-                    }
-                default:
-                    return value; //找到后默认返回obj
-                }
-            }
-        }
-    }
-
-    return false; //没有找到返回false
+    return {}; //没有找到返回空对象{}
 };
 
 Array.prototype.exist = function(e) { //e可为string、number类型或等于null、undefined

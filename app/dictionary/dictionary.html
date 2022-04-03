@@ -5,12 +5,12 @@
                 <div class="m-0 font-weight-bold text-primary" style="width: 100px;float:left;padding-top: 4px;">
                     数据字典
                 </div>
-                <a href="#" class="btn btn-primary btn-icon-split btn-sm">
+                <button class="btn btn-primary btn-icon-split btn-sm" data-bs-toggle="modal" data-bs-target="#modal">
                     <span class="icon text-white-50">
-                        <i class="fas fa-flag"></i>
+                        <i class="fas fa-file"></i>
                     </span>
                     <span class="text">新增</span>
-                </a>
+                </button>
             </div>
             <div class="card-body text-center">
                 <div class="row no-margin">
@@ -19,7 +19,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">类型</span>
                             </div>
-                            <input type="text" class="form-control" />
+                            <input type="text" class="form-control" ng-model="Cond.Type" />
                         </div>
                     </div>
                     <div class="col-lg-3">
@@ -27,7 +27,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">编码</span>
                             </div>
-                            <input type="text" class="form-control" />
+                            <input type="text" class="form-control" ng-model="Cond.Code" />
                         </div>
                     </div>
                     <div class="col-lg-3">
@@ -35,7 +35,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">内容</span>
                             </div>
-                            <input type="text" class="form-control" />
+                            <input type="text" class="form-control" ng-model="Cond.Value" />
                         </div>
                     </div>
                     <div class="col-lg-3">
@@ -43,21 +43,21 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">状态</span>
                             </div>
-                            <select class="form-control">
-                                <option value="normal">可用</option>
-                                <option value="abandon">废弃</option>
+                            <select class="form-control" ng-model="Cond.Status">
+                                <option value="Enable">启用</option>
+                                <option value="Disable">禁用</option>
                             </select>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
-                        <a href="#" class="btn btn-primary btn-icon-split btn-sm">
+                        <button class="btn btn-primary btn-icon-split btn-sm" ng-click="Query()">
                             <span class="icon text-white-50">
                                 <i class="fas fa-info-circle"></i>
                             </span>
                             <span class="text">查询</span>
-                        </a>
+                        </button>
                     </div>
                 </div>
                 <div class="table-responsive">
@@ -67,21 +67,85 @@
                                 <th>类型</th>
                                 <th>编码</th>
                                 <th>内容</th>
-                                <th>状态</th>
-                                <th>操作</th>
+                                <th width="10%">状态</th>
+                                <th width="10%">操作</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>类型</td>
-                                <td>编码</td>
-                                <td>内容</td>
-                                <td>状态</td>
-                                <td>操作</td>
+                            <tr ng-repeat="($index, Item) in Data">
+                                <td>{{Item.Type}}</td>
+                                <td>{{Item.Code}}</td>
+                                <td>{{Item.Value}}</td>
+                                <td>{{Basic.Status.get('Key', Item.Status, 'Val')}}</td>
+                                <td><button type="button" class="btn btn-outline-primary btn-sm" style="padding: 0 6px;" ng-click="Edit($index)">编辑</button></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">数据字典-新增</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row no-margin">
+                    <div class="col-md-12">
+                        <div class="input-group input-group-sm">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">类型</span>
+                            </div>
+                            <input type="text" class="form-control" ng-model="Modal.Type" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="input-group input-group-sm">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">编码</span>
+                            </div>
+                            <input type="text" class="form-control" ng-model="Modal.Code" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="input-group input-group-sm">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">内容</span>
+                            </div>
+                            <input type="text" class="form-control" ng-model="Modal.Value" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="input-group input-group-sm">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">是否启用</span>
+                            </div>
+                            <label class="form-control center">
+                                <input type="radio" name="IsEnable" value="Enable" style="margin-right: 5px;" ng-model="Modal.Status">
+                                启用
+                            </label>
+                            <label class="form-control center">
+                                <input type="radio" name="IsEnable" value="Disable" style="margin-right: 5px;" ng-model="Modal.Status">
+                                禁用
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary btn-sm" ng-click="Save()">保存</button>
             </div>
         </div>
     </div>

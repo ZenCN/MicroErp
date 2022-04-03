@@ -45,7 +45,7 @@
                     'libs/plugin.slideout/slideout.min.js',
                     'app/directive/slide-menu.js',
                     'libs/datatables/jquery.dataTables.min.js',
-                    'libs/datatables/dataTables.bootstrap4.min.js',
+                    'libs/datatables/dataTables.bootstrap5.min.js',
                     'libs/datatables/dataTables.bootstrap4.css'
                 ])
             })
@@ -59,6 +59,15 @@
                     'app/directive/chart-area.js',
                     'app/directive/chart-pie.js',
                     'app/dashboard/dashboard.css'
+                ])
+            })
+            .state('menu.goods_arch_lst', {
+                url: '/goods_arch_lst',
+                controller: 'arch_lst_ctrl',
+                templateUrl: 'app/goods_arch/arch_lst.html',
+                resolve: resolve_dep([
+                    'app/goods_arch/arch_lst_ctrl.js',
+                    'app/directive/grid-table.js',
                 ])
             })
             .state('menu.goods_arch', {
@@ -118,6 +127,23 @@
                     'app/dictionary/dictionary_ctrl.js',
                     'app/directive/grid-table.js'
                 ])
-            });
+            })
+            .state('menu.user_lst', {
+                url: '/user_lst',
+                controller: 'user_lst_ctrl',
+                templateUrl: 'app/user/user_lst.html',
+                resolve: resolve_dep([
+                    'app/user/user_lst_ctrl.js',
+                    'app/directive/grid-table.js'
+                ])
+            })
+            .state('menu.user', {
+                url: '/user',
+                controller: 'user_ctrl',
+                templateUrl: 'app/user_manage/user.html',
+                resolve: resolve_dep([
+                    'app/user_manage/user_ctrl.js'
+                ])
+            })
     }
 })();

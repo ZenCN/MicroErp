@@ -14,9 +14,9 @@
                     "aLengthMenu": [[18, 25, 50, -1], [18, 25, 50, "所有"]],
                     "language": {
                         "decimal": "",
-                        "emptyTable": "No data available in table",
+                        "emptyTable": "没有任何数据 ^_^",
                         "info": "第 _PAGE_ 页/共 _PAGES_ 页",
-                        "infoEmpty": "没有任何数据 ^_^",
+                        "infoEmpty": "",
                         "infoFiltered": "(filtered from _MAX_ total entries)",
                         "infoPostFix": "",
                         "thousands": ",",

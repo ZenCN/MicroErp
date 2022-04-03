@@ -12,6 +12,7 @@
     menu_ctrl.$inject = ['$scope', '$state'];
 
     function menu_ctrl(vm, $state) {
-
+        vm.CurUrl = $state.current.url.replace('/', '');
+        console.log(vm.CurUrl);
     }
 })();

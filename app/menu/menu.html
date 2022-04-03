@@ -18,43 +18,47 @@
     </li>
     <!-- Divider -->
     <hr class="sidebar-divider">
-    <div class="sidebar-heading">货物出入</div>
-    <li class="nav-item">
-        <a class="nav-link" ng-href="#!/goods_arch">
+    <div class="sidebar-heading" style="margin-bottom: 5px;">进销管理</div>
+    <li class="nav-item" ng-class="{selected: CurUrl.indexOf('goods_arch') >= 0}" ng-click="CurUrl = 'goods_arch'">
+        <a class="nav-link" ng-href="#!/goods_arch_lst">
             <i class="fas fa-fw fa-chart-area"></i>
-            <span>货物建档</span>
+            <span>商品档案</span>
         </a>
     </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">
+    <li class="nav-item" ng-class="{selected: CurUrl == 'stock_query'}">
+        <a class="nav-link" href="#!/stock_query">
             <i class="fas fa-fw fa-table"></i>
-            <span>库存查询</span>
+            <span>库存盘点</span>
         </a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" ng-class="{selected: CurUrl.indexOf('goods_stock') >= 0}" ng-click="CurUrl = 'goods_stock'">
         <a class="nav-link" ng-href="#!/goods_stock_lst">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>商品进货</span>
         </a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" ng-class="{selected: CurUrl.indexOf('goods_checkout') >= 0}" ng-click="CurUrl = 'goods_checkout'">
         <a class="nav-link" ng-href="#!/goods_checkout_lst">
             <i class="fas fa-fw fa-table"></i>
             <span>商品出货</span>
         </a>
     </li>
-    <div class="sidebar-heading">基础数据</div>
-    <li class="nav-item">
+    <div class="sidebar-heading" style="margin: 5px 0;">基础数据</div>
+    <li class="nav-item" ng-class="{selected: CurUrl.indexOf('dictionary') >= 0}" ng-click="CurUrl = 'dictionary'">
         <a class="nav-link" ng-href="#!/dictionary">
-            <i class="fas fa-fw fa-table"></i>
+            <i class="fas fa-file-archive fa-table"></i>
             <span>数据字典</span>
         </a>
-        <a class="nav-link" ng-href="#!/dictionary">
-            <i class="fas fa-fw fa-table"></i>
+    </li>
+    <li class="nav-item" ng-class="{selected: CurUrl.indexOf('user') >= 0}" ng-click="CurUrl = 'user'">
+        <a class="nav-link" ng-href="#!/user_lst">
+            <i class="fas fa-user fa-table"></i>
             <span>用户管理</span>
         </a>
-        <a class="nav-link" ng-href="#!/dictionary">
-            <i class="fas fa-fw fa-table"></i>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" ng-href="#!/role">
+            <i class="fas fa-critical-role fa-table"></i>
             <span>角色管理</span>
         </a>
     </li>
