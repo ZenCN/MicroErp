@@ -1,0 +1,152 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header py-3" style="padding-top: 7px !important;">
+                <div class="m-0 font-weight-bold text-primary" style="width: 100px;float:left;padding-top: 4px;">
+                    用户管理
+                </div>
+                <button class="btn btn-primary btn-icon-split btn-sm" data-bs-toggle="modal" data-bs-target="#modal">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-file"></i>
+                    </span>
+                    <span class="text">新增</span>
+                </button>
+            </div>
+            <div class="card-body text-center">
+                <div class="row no-margin">
+                    <div class="col-lg-3">
+                        <div class="input-group input-group-sm">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">工号</span>
+                            </div>
+                            <input type="text" class="form-control" ng-model="Cond.Code" />
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="input-group input-group-sm">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">名称</span>
+                            </div>
+                            <input type="text" class="form-control" ng-model="Cond.Name" />
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="input-group input-group-sm">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">手机号</span>
+                            </div>
+                            <input type="text" class="form-control" ng-model="Cond.Phone" />
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="input-group input-group-sm">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">状态</span>
+                            </div>
+                            <select class="form-control" ng-model="Cond.Status">
+                                <option value="Enable">启用</option>
+                                <option value="Disable">禁用</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <button class="btn btn-success btn-sm btn-icon-split" style="margin-right: 20px;">
+                            <span class="icon text-white-50">
+                                <i class="fas fa-search"></i>
+                            </span>
+                            <span class="text">查询</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table grid-table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>工号</th>
+                                <th>名称</th>
+                                <th>手机号</th>
+                                <th width="10%">状态</th>
+                                <th width="10%">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="($index, Item) in Data">
+                                <td>{{Item.Code}}</td>
+                                <td>{{Item.Name}}</td>
+                                <td>{{Item.Phone}}</td>
+                                <td>{{Basic.Status.get('Key', Item.Status, 'Val')}}</td>
+                                <td><button type="button" class="btn btn-outline-primary btn-sm" style="padding: 0 6px;" ng-click="Edit($index)">编辑</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">用户管理-新增</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row no-margin">
+                    <div class="col-md-12">
+                        <div class="input-group input-group-sm">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">工号</span>
+                            </div>
+                            <input type="text" class="form-control" ng-model="Modal.Code" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="input-group input-group-sm">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">名称</span>
+                            </div>
+                            <input type="text" class="form-control" ng-model="Modal.Name" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="input-group input-group-sm">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">手机号</span>
+                            </div>
+                            <input type="text" class="form-control" ng-model="Modal.Phone" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="input-group input-group-sm">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">是否启用</span>
+                            </div>
+                            <label class="form-control center">
+                                <input type="radio" name="IsEnable" value="Enable" style="margin-right: 5px;" ng-model="Modal.Status">
+                                启用
+                            </label>
+                            <label class="form-control center">
+                                <input type="radio" name="IsEnable" value="Disable" style="margin-right: 5px;" ng-model="Modal.Status">
+                                禁用
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary btn-sm" ng-click="Save()">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
